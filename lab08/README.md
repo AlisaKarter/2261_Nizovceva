@@ -50,9 +50,9 @@ print(i)
 
 Инверсия по законам де Моргана:
 
-not (A or B) = not A and not B
-not (i <= x[i] < 2 * i) = x[i] < i or x[i] >= 2 * i
-not (3 * i <= x[i] < 4 * i) = x[i] < 3 * i or x[i] >= 4 * i
+* not (A or B) = not A and not B
+* not (i <= x[i] < 2 * i) = x[i] < i or x[i] >= 2 * i
+* not (3 * i <= x[i] < 4 * i) = x[i] < 3 * i or x[i] >= 4 * i
 
 ### Задание 3 **(2)**
 
