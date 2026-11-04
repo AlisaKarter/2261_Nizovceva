@@ -19,6 +19,6 @@ int main() {
         else if (x < 0) neg++;
     }
 
-    std::cout << "Положительных: " << pos
-              << ", Отрицательных: " << neg;
+    std::cout << "Pos: " << pos
+              << ", Neg: " << neg;
 }
