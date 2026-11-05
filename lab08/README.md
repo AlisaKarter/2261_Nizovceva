@@ -162,6 +162,50 @@ forc(i, from, to)
 
 *Написанные программы сохраните в папку с номером задания.*
 
+Различия:
+
+* Переменная цикла — константная ссылка  
+В стандартном for переменная i — обычная изменяемая переменная. В forc переменная i объявлена как const int &i = __i — константная  ссылка на вспомогательную переменную __i. Это значит, что изменить i внутри цикла нельзя.  
+* Инкремент идёт по внутренней переменной __i  
+В стандартном цикле инкремент i++ изменяет саму переменную цикла. В forc инкрементируется __i++, а i — лишь ссылка на неё. Хотя это даёт тот же эффект, главное отличие — невозможность вручную изменить шаг итерации через i.
+
+Пример с обычным for:
+
+```c++
+#include <iostream>
+
+int main() {
+    for (int i = 0; i < 5; i++) {
+        if (i == 2) i = 4;
+        std::cout << i << " ";
+    }
+}
+```
+<img width="146" height="54" alt="image" src="https://github.com/user-attachments/assets/a1f81482-3e6c-4831-9638-ac421e56b731" />
+
+Пример с forc:
+
+```c++
+#include <iostream>
+
+#define forc(i, from, to) \
+   int __i = from, __n = to; \
+   for (const int &i = __i; i < __n; __i++)
+
+int main() {
+    forc(i, 0, 10) {
+        std::cout << i << " ";
+        if (i == 3) {
+            i = 7;
+        }
+    }
+}
+```
+if i=3:i=7 не закомментировано:  
+<img width="372" height="30" alt="image" src="https://github.com/user-attachments/assets/d064c03c-4e22-4f84-b271-226baf36d7b0" />
+
+if i=3:i=7 закомментировано:  
+<img width="212" height="47" alt="image" src="https://github.com/user-attachments/assets/cff722b0-5dcd-4d6c-8fc6-f9bd4d2b8827" />
 
 ### Задание 7 **(2)**
 
