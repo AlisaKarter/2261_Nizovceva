@@ -315,17 +315,30 @@ def t(i):
 
 t(left)=False ∧ t(right)=True
 
-```
+```python
+def t(i):
+    return i >= 1000
+
 left = -1
 right = 10**18
-while ...:
-   mid = ...
-   if t(mid):
-      ...
-   else:
-      ...
-print(...)
+
+while right - left > 1:
+    mid = (left + right) // 2
+
+    if t(mid):
+        right = mid
+    else:
+        left = mid
+
+print(right)
 ```
+
+1. Изначально left = -1, а right = 10**18.
+2. Находим середину отрезка: mid = (left + right) // 2.
+3. Если t(mid) == True, то искомое число находится слева или равно mid, поэтому right = mid.
+4. Если t(mid) == False, то искомое число находится правее, поэтому left = mid.
+5. Повторяем, пока между left и right не останется одного числа.  
+Когда right - left == 1, найдено минимальное число, для которого функция возвращает True.
 
 ## Дополнительные задания
 
