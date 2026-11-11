@@ -141,6 +141,25 @@ print(','.join(map(str, map(len, map(str.strip, input().split(','))))))
 >>> print (*gen(7))
 7 22 11 34 17 52 26 13 40 20 10 5 16 8 4 2 1
 ```
+```python
+def gen_list(n):
+    result = []
+    result.append(n)
+    
+    while n != 1:
+        if n % 2 == 0:
+            n = n // 2
+        else:
+            n = 3 * n + 1
+        result.append(n)
+        
+    return result
+
+print(*gen_list(7))
+
+```
+
+<img width="384" height="52" alt="image" src="https://github.com/user-attachments/assets/90c6f599-c4e8-48cb-be72-01e3c8917b99" />
 
 ### Задание 7 **(2)**
 
@@ -163,8 +182,22 @@ def every_other(seq):
 2 5 11 3 8
 21
 ```
+```python
+def every_other(seq):
+    return [item for i, item in enumerate(seq) if i % 2 == 0]
 
+print(*every_other([10, 20, 30, 40, 50]))
+print(*every_other(range(10)))
+print(*every_other(iter(range(10))))
 
+```
+
+<img width="145" height="90" alt="image" src="https://github.com/user-attachments/assets/6899f56a-b1e8-419d-9e3e-6060c406a276" />
+
+Объяснение:
+* enumerate(seq): Эта встроенная функция проходит по любой последовательности и возвращает пары;
+* [item for ...]: Это генератор списка. Он в одну строку собирает все элементы, прошедшие проверку, в новый список и возвращает его функцией return;
+* print(*...): Оператор * извлекает элементы из полученного списка и передает их в print как отдельные аргументы.
 
 ### Задание 8 **(2)**
 
