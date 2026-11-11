@@ -62,7 +62,15 @@ print (*l, **d)
 >>> print(ans)
 6143
 ```
+```python
+lst = list(range(6000, 7000))
+ans = max(lst, key=lambda x: bin(x).count('1'))
+print(ans)
+```
 
+<img width="76" height="34" alt="image" src="https://github.com/user-attachments/assets/279b77ac-8dde-4446-9ce1-2a19dc2a84d5" />
+
+Объяснение: Функция bin(x) преобразует число в двоичную строку. Метод .count('1') подсчитывает количество единиц. Аргумент key указывает функции max, что сравнивать элементы нужно именно по этому критерию.
 
 ### Задание 4 **(2)**
 
