@@ -214,6 +214,15 @@ print(*every_other(iter(range(10))))
 >>> print(nums)
 [1, 2, 3, 4]
 ```
+```python
+lst = [1, 'abc', 2, 3, 4, 'aa']
+nums = [x for x in lst if type(x) is int]
+print(nums)
+```
+
+<img width="134" height="50" alt="image" src="https://github.com/user-attachments/assets/e48ee50b-256f-4a17-a46b-f8dd22d725b6" />
+
+Если нужно включать и числа с плавающей точкой, условие можно изменить на type(x) in (int, float).
 
 ###  Задание 9 **(2)**
 
@@ -232,6 +241,18 @@ print(*every_other(iter(range(10))))
 [4, 8, 12, 16, 20]
 [5, 10, 15, 20, 25]
 ```
+```python
+n = 5
+tblmul = [[i * j for j in range(1, n + 1)] for i in range(1, n + 1)]
+
+for row in tblmul:
+    print(row)
+```
+
+<img width="174" height="102" alt="image" src="https://github.com/user-attachments/assets/0e7f553e-8bff-4992-a456-476ec4bd02c9" />
+
+Объяснение:  
+Внешний цикл for i in range(1, n + 1) формирует строки таблицы, а внутренний for j in range(1, n + 1) вычисляет произведение i * j для каждого элемента строки. В результате получается двумерный список, где каждый элемент равен произведению номеров строки и столбца.
 
 ###  Задание 10 **(1)**
 *Какие из указанных функций и методов Python соответствуют определению чистых функций?
