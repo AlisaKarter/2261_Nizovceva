@@ -46,6 +46,19 @@ print (*l, **d)
 >>> sublist(lst, 0, 1, 2, 3, 4, 5)
 ['Anna', 'Barbara', 'Clara', 'Diana', 'Eva', 'Flora']
 ```
+```python
+def sublist(seq, *indices):
+    return [seq[i] for i in indices]
+
+lst = ['Anna', 'Barbara', 'Clara', 'Diana', 'Eva', 'Flora']
+print(sublist(lst, 0, 2, 5))
+print(sublist(lst))
+print(sublist(lst, 0, 1, 2, 3, 4, 5))
+```
+
+<img width="463" height="81" alt="image" src="https://github.com/user-attachments/assets/6b14d923-2a55-4a3f-b36a-dfbf6caf77b8" />
+
+Объяснение: Использование *indices позволяет функции принимать произвольное количество позиционных аргументов, которые собираются в кортеж. Генератор списка проходит по этим индексам и извлекает соответствующие элементы.
 
 ### Задание 3 **(1)**
 
