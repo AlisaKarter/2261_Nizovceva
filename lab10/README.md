@@ -248,6 +248,9 @@ for (int i =...; i <...; i++)
 int a[10];
 std::cout << &a[8] - &a[3] << std::endl;
 ```
+<img width="48" height="45" alt="image" src="https://github.com/user-attachments/assets/53daaa5e-c8ce-47ed-8dec-00420ea4b902" />
+
+Разность указателей находится независимо от типов в данном случае будет 5 при любых типах.
 
 ### Задание 10 **(1)**
 
