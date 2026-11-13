@@ -20,7 +20,40 @@ std::cout << *p <<' '<< *q << std::endl;
 чтобы показать различия?*
 
 *Примеры программ сохраните в папке с номером задания.*
+```c++
+#include <iostream>
+using namespace std;
+int main()
+{
+	int a = 10, b = 20;
+	int *p = &a , *q = &b;
+	p = q;
+	std::cout << *p <<' '<< *q << std::endl;
+	std::cout << a << ' ' << b << std::endl;
+	std::cout << p << ' ' << q << std::endl;
+	std::cout << &a << ' ' << &b << std::endl;
+}
+```
 
+<img width="251" height="100" alt="image" src="https://github.com/user-attachments/assets/2f373c39-8907-4598-a2bc-2d005d121581" />
+
+```c++
+#include <iostream>
+using namespace std;
+int main()
+{
+	int a = 10, b = 20;
+	int *p = &a , *q = &b;
+	*p = *q;
+	std::cout << *p <<' '<< *q << std::endl;
+	std::cout << a << ' ' << b << std::endl;
+	std::cout << p << ' ' << q << std::endl;
+	std::cout << &a << ' ' << &b << std::endl;
+}
+
+```
+
+<img width="248" height="101" alt="image" src="https://github.com/user-attachments/assets/4c8c197a-9cdc-47a2-8633-cf77b55a0cc9" />
 
 ### Задание 2 **(1)**
 
