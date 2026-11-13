@@ -160,15 +160,71 @@ double x = 0;
 double *d = &x;
 std::cout << reinterpret_cast<size_t>(d + 4) - reinterpret_cast<size_t>(d - 4) << std::endl;
 ```
+Адрес изменился на 4 * 8 где 8 это адрес double разница между адресами 64
+<img width="74" height="62" alt="image" src="https://github.com/user-attachments/assets/ffb9179b-eab8-4f4d-8ab2-3f5a3fda65b6" />
+
+Если изменить на int:
+
+Адрес изменился на 4 * 4 где 4 это адрес int разница между адресами 32
+
+```c++
+#include <iostream>
+using namespace std;
+int main()
+{
+	int x = 0;
+    int *d = &x;
+    std::cout << reinterpret_cast<size_t>(d + 4) - reinterpret_cast<size_t>(d - 4) << std::endl;
+}
+
+```
+<img width="73" height="50" alt="image" src="https://github.com/user-attachments/assets/1f75a81c-aa55-481a-b5a2-d3bc79740bcf" />
+
+Если изменить на char:
+
+Адрес изменился на 4 * 1 где 1 это адрес char разница между адресами 8
+
+```c++
+#include <iostream>
+using namespace std;
+int main()
+{
+	char x = 0;
+    char *d = &x;
+    std::cout << reinterpret_cast<size_t>(d + 4) - reinterpret_cast<size_t>(d - 4) << std::endl;
+}
+```
+
+<img width="56" height="50" alt="image" src="https://github.com/user-attachments/assets/b9383f17-d410-4e52-807c-814bdcea30d1" />
 
 ### Задание 7 **(2)**
 
 *Объясните работу следующей программы. Как изменится
 результат, если тип* **double** *изменить на некоторый другой, например*
 **int** *или* **char**?
+
+Берётся разность адресов и делится на размер типа:
+
+Double:  
 ```
 std::cout << reinterpret_cast <double*>(3000) - reinterpret_cast <double*>(2000) << std::endl;
 ```
+
+<img width="78" height="47" alt="image" src="https://github.com/user-attachments/assets/913e2b12-eeb9-4ef6-ae10-2ff91a10eab7" />
+
+Int:  
+```
+std::cout << reinterpret_cast <int*>(3000) - reinterpret_cast <int*>(2000) << std::endl;
+```
+
+<img width="77" height="65" alt="image" src="https://github.com/user-attachments/assets/8de8a7b0-8c18-4ec5-94f6-095643184201" />
+
+Char:  
+```
+std::cout << reinterpret_cast <char*>(3000) - reinterpret_cast <char*>(2000) << std::endl;
+```
+
+<img width="73" height="56" alt="image" src="https://github.com/user-attachments/assets/5f6a71ae-93af-42dc-8f9b-71d4ec645126" />
 
 ### Задание 8 **(2)**
 
@@ -182,7 +238,6 @@ int *b=a + 8;
 for (int i =...; i <...; i++)
     std::cout << b[i] <<' ';
 ```
-
 
 ### Задание 9 **(2)**
 
