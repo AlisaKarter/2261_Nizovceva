@@ -239,6 +239,22 @@ for (int i =...; i <...; i++)
     std::cout << b[i] <<' ';
 ```
 
+```c++
+#include <iostream>
+using namespace std;
+int main()
+{
+    int a[20];
+    for ( int i = 0; i < 20; i++)
+    a[i] = i;
+    int *b=a + 8;
+    for (int i = 8; i < 12; i++)
+    std::cout << b[i] <<' ';
+}
+```
+
+<img width="146" height="50" alt="image" src="https://github.com/user-attachments/assets/55cf601d-bd78-4af7-825f-0024e671800b" />
+
 ### Задание 9 **(2)**
 
 *Что выводит следующая программа? Изменится ли результат если
