@@ -63,12 +63,29 @@ double x[10];
 for (int i = 0; i <1 0; i++)
     std::cout << &x[i] << std::endl;
 ```
+
+<img width="131" height="220" alt="image" src="https://github.com/user-attachments/assets/920e78dd-83bd-4d16-900d-d41cb3118d52" />
+
 *Что она выводит? Измените
 вывод так, чтобы адреса выводились в десятичной системе счисления.
 Объясните почему числа составляют арифметическую прогрессию с
 определенным шагом.*
 
 *Записанную программу сохраните в папке с номером задания.*
+
+```c++
+#include <iostream>
+using namespace std;
+int main()
+{
+	double x[10];
+    for (int i = 0; i < 10; i++){
+        std::cout << reinterpret_cast<size_t>(&x[i]) << std::endl;
+    }
+}
+```
+
+<img width="125" height="210" alt="image" src="https://github.com/user-attachments/assets/6bc05958-5a9f-4e6a-bd47-043aa530f19b" />
 
 ### Задание 3 **(2)**
 
