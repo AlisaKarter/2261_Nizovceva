@@ -268,6 +268,8 @@ int main(void)
 }
 ```
 
+<img width="486" height="138" alt="image" src="https://github.com/user-attachments/assets/fc734ba2-fde3-49cd-a30d-2249ca89aed4" />
+
 ### Задание 8 **(3)**
 
 *Объясните работу приведенной ниже программы.
