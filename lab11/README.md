@@ -71,8 +71,6 @@ int main(void) {
 *Какие из способов объявления функции является правильным с точки зрения 
 корректности работы программы? В чем разница между этими способами?*
 
-
-
 ```
 void dosome(const vector<int> &V);
 void dosome(vector<int> &V);
@@ -80,10 +78,75 @@ void dosome(const vector<int> V);
 void dosome(vector<int> V);
 ```
 
-*Проверьте в какие из этих функций можно передать константные вектора. ОЛбъясните результат.*
+*Проверьте в какие из этих функций можно передать константные вектора. Объясните результат.*
 ```
 dosome({1, 2, 3});
 ```
+
+```c++
+#include <iostream>
+#include <vector>
+using namespace std;
+
+void dosome_1 (const std::vector<int> &V){
+    int s = 0;
+    for(auto x: V){
+        s += x;
+    }
+    std::cout << s << std::endl;
+}
+
+void dosome_2 (std::vector<int> &V){
+    int s = 0;
+    for(auto x: V){
+        s += x;
+    }
+    std::cout << s << std::endl;
+}
+void dosome_3 (const std::vector<int> V){
+    int s = 0;
+    for(auto x: V){
+        s += x;
+    }
+    std::cout << s << std::endl;
+}
+
+void dosome_4 (std::vector<int> V){
+    int s = 0;
+    for(auto x: V){
+        s += x;
+    }
+    std::cout << s << std::endl;
+}
+
+int main(){
+
+    std::vector<int> V = {1, 2, 3, 4, 5};
+    dosome_1(V);
+    dosome_2(V);
+    dosome_3(V);
+    dosome_4(V);
+}
+```
+
+<img width="61" height="102" alt="image" src="https://github.com/user-attachments/assets/ba14123b-6da5-433f-9559-a886f77ed293" />
+
+Все способы выдают одинаковый результат.  
+Для чего нужны const и &  
+const - пишется чтоб отметить объект как неизменяемый и сделать программу более безопасной.  
+& - передает ссылку на исходный объект, программа работает быстрее, но при изменениях объекта будет изменяться исходный объект.
+
+*Выведите адрес нулевого элемента вектора в функции. Объясните результат.*
+
+<img width="170" height="85" alt="image" src="https://github.com/user-attachments/assets/407966ed-1642-4707-b329-aad6e55ba9e5" />
+
+В первых двух функциях мы ссылаемся на исходный объект поэтому адрес одинаковый в функциях 3, 4 мы создаем копию объекта поэтому ссылки разные.
+
+Если передать в эти функции константный вектор {1, 2, 3}  
+dosome_1,_3,_4 работают а dosome_2 выдает ошибку:  
+<img width="639" height="20" alt="image" src="https://github.com/user-attachments/assets/894ae2ea-8e15-4ad3-9c0d-27ee993f7445" />
+
+Это происходит так как нельзя передать передать константный объект по ссылке и определить его как не константный. В первой функции вектор объявлен как const поэтому первая функция работает.
 
 
 
