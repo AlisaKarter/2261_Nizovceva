@@ -1,4 +1,4 @@
-# Языки программирования
+S# Языки программирования
 ## Лабораторная работа 11
 
 ### Задание 1 **(2)**
@@ -13,6 +13,31 @@ int foo(int x) {
 int bar(int x) {
     return x+1;
 }
+int main() {
+    foo(0);
+    return 0;
+}
+```
+
+<img width="359" height="30" alt="image" src="https://github.com/user-attachments/assets/d29f9c59-f317-4536-bdaa-d7de545ea9e4" />
+
+Программа выдает ошибку, функция bar используется раньше чем объявляется.  
+Чтоб программа заработала нужно объявить функцию bar до функции foo.
+
+```c++
+#include <iostream>
+using namespace std;
+
+int bar(int x);
+
+int foo(int x) {
+    return bar(x);
+}
+
+int bar(int x) {
+    return x+1;
+}
+
 int main() {
     foo(0);
     return 0;
