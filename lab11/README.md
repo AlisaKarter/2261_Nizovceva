@@ -365,6 +365,8 @@ int main() {
 }
 ```
 
+<img width="259" height="52" alt="image" src="https://github.com/user-attachments/assets/525b54df-4c76-4226-949c-c8e6208874ba" />
+
 Объяснение работы программы:
 
 Выделяем массив из 10 элементов, p: массив1  
