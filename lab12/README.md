@@ -301,6 +301,8 @@ Rectangle.square = lambda self : abs((self.topleft.x-self.bottomright.x) *\
 print(r.square)
 ```
 
+<img width="204" height="83" alt="image" src="https://github.com/user-attachments/assets/30eb3ce5-adac-401a-aa07-37f29901a4e2" />
+
 ### Задание 10 **(2)**
 
 *Добавьте в программу класс* **Segment** *с двумя полями типа*
