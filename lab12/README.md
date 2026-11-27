@@ -122,6 +122,69 @@ int main(){
 куче, в статической памяти и на стеке. Выведите адреса полей.
 Объясните результат.*
 
+**box.cpp**
+
+```c++
+#include <iostream>
+using namespace std;
+
+class box{
+private:
+    double length;
+    double widht;
+    double height;
+    static int count;
+public:
+    box(double _lenght, double _widht, double _height):
+        length(_lenght), widht(_widht), height(_height){
+            count++;
+        }
+    double V();
+    double S();
+    void addr();
+};
+
+double box::V(){
+    return length * widht * height;
+}
+
+double box::S(){
+    return (2 * ((length * widht) + (widht * height) + (length * height)));
+}
+
+void box::addr(){
+    std::cout << &length << ' ' << &widht << ' ' << &height << ' ' << &count << std::endl;
+}
+
+int box::count = 0;
+```
+
+**04.cpp**
+
+```c++
+#include <iostream>
+#include "box.cpp"
+using namespace std;
+
+box c(12, 10, 1);
+
+int main(){
+
+    box a(10, 8, 3);
+    box *b = new box(8, 8, 8);
+
+    a.addr();
+    b->addr();
+    c.addr();
+
+    return 0;
+}
+```
+
+<img width="566" height="87" alt="image" src="https://github.com/user-attachments/assets/d9a40440-a71b-4bd6-a1ae-390e14785f45" />
+
+Статическое поле одно на все объекты независимо от того где они расположены. Поэтому адрес count и адреса полей из объекта `c` имеют похожие адреса, а остальные поля в других областях расположены далеко друг от друга.
+
 ### Задание 5 **(2)**
 
 *Напишите программу, которая продемонстрирует разницу между
