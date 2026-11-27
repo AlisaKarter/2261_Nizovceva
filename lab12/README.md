@@ -85,6 +85,35 @@ int main(){
 оба объекта. Не забывайте, что объекты созданные в куче следует
 освобождать.*
 
+```c++
+#include <iostream>
+#include "box.cpp"
+using namespace std;
+
+int main(){
+
+    box *x = new box(10, 6, 3);
+    box *y = new box(8, 8, 8);
+
+    if (y->V() > x->V()){
+        std::cout << "Volume y greater than volume x" << std::endl;
+    }else{
+        std::cout << "Volume x greater than volume y" << std::endl;
+    }
+
+    if ((y->S() + x->S()) >= 400){
+        std::cout << "Surface y+x >= 400" << std::endl;
+    }else{
+        std::cout << "Surface y+x < 400" << std::endl;
+    }
+
+    delete x;
+    delete y;
+    return 0;
+}
+```
+
+<img width="291" height="56" alt="image" src="https://github.com/user-attachments/assets/508b16da-418e-4591-aefb-915c51efdf69" />
 
 ### Задание 4 **(2)**
 
