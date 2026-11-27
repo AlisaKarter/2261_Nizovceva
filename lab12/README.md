@@ -41,6 +41,43 @@ int main(){
 работу методов. Проверьте, изменился ли размер одного объекта этого
 класса. Объясните результат*
 
+```c++
+#include <iostream>
+using namespace std;
+
+class box{
+private:
+    double length;
+    double widht;
+    double height;
+public:
+    box(double _lenght, double _widht, double _height):
+        length(_lenght), widht(_widht), height(_height){
+        }
+    double V();
+    double S();
+};
+
+double box::V(){
+    return length * widht * height;
+}
+
+double box::S(){
+    return (2 * ((length * widht) + (widht * height) + (length * height)));
+}
+
+int main(){
+    box a(10, 6, 3);
+    std::cout << sizeof(a) << std::endl;
+    std::cout << "volume = " << a.V() << std::endl;
+    std::cout << "surface = " << a.S() << std::endl;
+}
+```
+
+<img width="152" height="81" alt="image" src="https://github.com/user-attachments/assets/2b98b65b-d7c4-4719-8af2-a903c01b9bf7" />
+
+Методы классов не хранятся в самом классе поэтому размер объекта этого класса не изменился.
+
 ### Задание 3 **(2)**
 
 *Создайте два объекта* **x** *и* **y** *класса* **box** *в куче. Напишите
