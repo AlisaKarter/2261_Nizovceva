@@ -218,6 +218,20 @@ private :
 
 Напишите программу для проверки работы методов.*
 
+```python
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+    def __str__(self):
+        return '(' + str(self.x) + ', ' + str(self.y) + ')'   
+        
+a = Point(10,5)
+print(a)
+```
+
+<img width="108" height="60" alt="image" src="https://github.com/user-attachments/assets/96868d62-df2b-4480-b063-0edc56891f20" />
+
 ### Задание 8 **(2)**
 
 *Напишите программу на Python в которой будет определяться класс*
